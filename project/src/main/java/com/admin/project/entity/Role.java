@@ -11,6 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
+@Table(schema = "public")
 public class Role {
 
     @Id
@@ -18,6 +19,8 @@ public class Role {
     @EqualsAndHashCode.Include
     @Column(name = "id_role")
     private Long idRole;
+
+    private String label;
 
     private String name;
 

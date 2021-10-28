@@ -11,6 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
+@Table(schema = "public")
 public class Project {
 
     @Id

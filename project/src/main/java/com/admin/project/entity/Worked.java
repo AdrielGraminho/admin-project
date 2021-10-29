@@ -1,9 +1,9 @@
 package com.admin.project.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Setter
 @Getter
@@ -13,21 +13,24 @@ import javax.persistence.*;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(schema = "public")
-public class User {
+public class Worked {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    @Column(name = "id_user")
-    private Long idUser;
-
-    private String name;
+    @Column(name = "id_worked")
+    private Long idWorked;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_role")
-    private Role role;
+    @JoinColumn(name = "id_user")
+    private User user;
 
-    @JsonIgnore
-    private String password;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_project")
+    private Project project;
+
+    private LocalDate date;
+
+    private Integer hours;
 
 }

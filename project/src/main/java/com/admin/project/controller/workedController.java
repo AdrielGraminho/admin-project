@@ -1,5 +1,6 @@
 package com.admin.project.controller;
 
+import com.admin.project.dto.WorkedDTO;
 import com.admin.project.entity.Worked;
 import com.admin.project.exceptions.CustomHandlerException;
 import com.admin.project.service.WorkedService;
@@ -28,6 +29,12 @@ public class workedController {
     ) throws CustomHandlerException {
         Pageable pageable = PageRequest.of(page, size);
         return service.findWorkedByUserAndProject(idUser, idProject, pageable);
+    }
+
+    @PostMapping()
+    @ApiOperation("Find worked by Id user and project")
+    public Worked findProjectsByUserId(@RequestBody WorkedDTO workedDTO ) throws CustomHandlerException {
+        return service.save(workedDTO);
     }
 }
 

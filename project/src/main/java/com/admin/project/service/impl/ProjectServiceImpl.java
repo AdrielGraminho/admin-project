@@ -7,6 +7,7 @@ import com.admin.project.repository.ProjectRepository;
 import com.admin.project.service.ProjectService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -30,5 +31,14 @@ public class ProjectServiceImpl implements ProjectService {
             return repository.findAllProjects(pageable);
         else
             return repository.findProjectsByUserId(idUser, pageable);
+    }
+
+    @Override
+    public Optional<Project> findById(Long idProject) throws CustomHandlerException {
+        Optional<Project> project = repository.findById(idProject);
+        if (project.isPresent())
+            return project;
+        else
+            throw new CustomHandlerException(HttpStatus.NOT_FOUND, "Project not found");
     }
 }

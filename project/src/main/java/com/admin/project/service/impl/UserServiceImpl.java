@@ -24,6 +24,6 @@ public class UserServiceImpl implements UserService {
         if (user.isPresent())
             return user;
         else
-            throw new CustomHandlerException(HttpStatus.UNAUTHORIZED, "User not found");
+            throw new CustomHandlerException(HttpStatus.NOT_FOUND, "User not found");
     }
 }

@@ -26,7 +26,6 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public Page<Project> findProjectsByUserId(Long idUser, Pageable pageable) throws CustomHandlerException {
         Optional<User> user = userService.findById(idUser);
-
         if (user.get().getRole().getName().equals("ADMIN"))
             return repository.findAllProjects(pageable);
         else

@@ -4,13 +4,12 @@ import com.admin.project.entity.Role;
 import com.admin.project.entity.User;
 import com.admin.project.exceptions.CustomHandlerException;
 import com.admin.project.repository.UserRepository;
+import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.boot.test.context.SpringBootTest;
 
 
 import java.util.Optional;
@@ -18,7 +17,6 @@ import java.util.Optional;
 import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
-@SpringBootTest
 public class UserServiceImplTest  {
 
     @InjectMocks

@@ -10,4 +10,6 @@ public interface WorkedService {
     Page<Worked> findWorkedByUserAndProject(Long idUser, Long idProject, Pageable pageable);
 
     Worked save(WorkedDTO workedDTO) throws CustomHandlerException;
+
+    Worked edit(Worked workedDTO) throws CustomHandlerException;
 }

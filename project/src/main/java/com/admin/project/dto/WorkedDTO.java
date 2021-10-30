@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class WorkedDTO {
+    private Long workedId;
     private Long userId;
     private Long projectId;
     private LocalDate date;

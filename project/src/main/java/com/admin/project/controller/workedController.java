@@ -32,9 +32,15 @@ public class workedController {
     }
 
     @PostMapping()
-    @ApiOperation("Find worked by Id user and project")
-    public Worked findProjectsByUserId(@RequestBody WorkedDTO workedDTO ) throws CustomHandlerException {
+    @ApiOperation("Save worked")
+    public Worked save(@RequestBody WorkedDTO workedDTO ) throws CustomHandlerException {
         return service.save(workedDTO);
+    }
+
+    @PutMapping()
+    @ApiOperation("Edit Worked")
+    public Worked edit(@RequestBody Worked worked ) throws CustomHandlerException {
+        return service.edit(worked);
     }
 }
 

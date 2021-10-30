@@ -2,6 +2,7 @@ package com.admin.project.service.impl;
 
 import com.admin.project.entity.Role;
 import com.admin.project.entity.User;
+import com.admin.project.exceptions.CustomHandlerException;
 import com.admin.project.repository.UserRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -27,7 +28,7 @@ public class UserServiceImplTest  {
     private UserRepository repository;
 
     @Test
-    public void mustBeReturnUserById(){
+    public void mustBeReturnUserById() throws CustomHandlerException {
         Role role = new Role(1L, "Administrador", "ADMIN");
         User user = new User(1L, "Adriel", role, "123" );
 

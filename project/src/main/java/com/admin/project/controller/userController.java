@@ -1,6 +1,7 @@
 package com.admin.project.controller;
 
 import com.admin.project.entity.User;
+import com.admin.project.exceptions.CustomHandlerException;
 import com.admin.project.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +23,7 @@ public class userController {
 
     @GetMapping("/{id}")
     @ApiOperation("Find user by Id")
-    public Optional<User> findById(@PathVariable ("id") Long idUser){
+    public Optional<User> findById(@PathVariable ("id") Long idUser) throws CustomHandlerException {
         return userService.findById(idUser);
     }
 }

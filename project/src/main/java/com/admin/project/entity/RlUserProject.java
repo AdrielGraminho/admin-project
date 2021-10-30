@@ -23,8 +23,8 @@ public class RlUserProject {
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_role")
-    private Role role;
+    @JoinColumn(name = "id_project")
+    private Project project;
 
 
 

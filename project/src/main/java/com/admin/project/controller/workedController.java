@@ -39,8 +39,8 @@ public class workedController {
 
     @PutMapping()
     @ApiOperation("Edit Worked")
-    public Worked edit(@RequestBody Worked worked ) throws CustomHandlerException {
-        return service.edit(worked);
+    public Worked edit(@RequestBody WorkedDTO workedDTO ) throws CustomHandlerException {
+        return service.edit(workedDTO);
     }
 }
 

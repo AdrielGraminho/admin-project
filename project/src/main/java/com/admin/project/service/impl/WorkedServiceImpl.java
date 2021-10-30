@@ -53,15 +53,19 @@ public class WorkedServiceImpl implements WorkedService {
 
     //TODO alterar para user worked dto, da forma que está há muito consumo de dados e muitos não sendo nessesários e editáveis
     @Override
-    public Worked edit(Worked worked) throws CustomHandlerException {
+    public Worked edit(WorkedDTO workedDTO) throws CustomHandlerException {
         Worked findWorked;
-        if (worked.getIdWorked() != null){
-            findWorked = repository.findById(worked.getIdWorked()).get();
+
+        if (workedDTO.getWorkedId() != null){
+            findWorked = repository.findById(workedDTO.getWorkedId()).get();
+            Optional<User> user = userService.findById(workedDTO.getUserId());
+            Optional<Project> project = projectService.findById(workedDTO.getProjectId());
+
             if (findWorked.getIdWorked() != null){
-                findWorked.setUser(worked.getUser());
-                findWorked.setProject(worked.getProject());
-                findWorked.setDate(worked.getDate());
-                findWorked.setHours(worked.getHours());
+                findWorked.setUser(user.get());
+                findWorked.setProject(project.get());
+                findWorked.setDate(workedDTO.getDate());
+                findWorked.setHours(workedDTO.getHours());
                 return repository.save(findWorked);
             }
             else
@@ -69,8 +73,5 @@ public class WorkedServiceImpl implements WorkedService {
         }
         else
             throw new CustomHandlerException(HttpStatus.CONFLICT, "Worked Null");
-
-
-
     }
 }

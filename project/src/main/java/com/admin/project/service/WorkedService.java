@@ -11,5 +11,5 @@ public interface WorkedService {
 
     Worked save(WorkedDTO workedDTO) throws CustomHandlerException;
 
-    Worked edit(Worked workedDTO) throws CustomHandlerException;
+    Worked edit(WorkedDTO workedDTO) throws CustomHandlerException;
 }

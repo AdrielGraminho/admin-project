@@ -4,7 +4,7 @@ import List from "./List/List";
 import getData from "./service/tableProjectsService";
 import Constants from "./constants/constants";
 
-const TableProjects = () =>  {
+const TableProjects = (props : any) =>  {
 
     const [data, setdata] = useState()
 

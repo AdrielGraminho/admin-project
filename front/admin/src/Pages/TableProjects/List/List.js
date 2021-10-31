@@ -24,7 +24,7 @@ import { useHistory } from "react-router-dom";
      const handleClick = (idProject) => {
          history.push
          ({
-             pathname: `/hours/`,
+             pathname: `/hours`,
              state: { idProject: idProject }
          })
      }

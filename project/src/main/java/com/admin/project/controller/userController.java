@@ -4,10 +4,7 @@ import com.admin.project.entity.User;
 import com.admin.project.exceptions.CustomHandlerException;
 import com.admin.project.service.UserService;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 

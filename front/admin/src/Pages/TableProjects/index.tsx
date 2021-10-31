@@ -2,7 +2,7 @@ import React, { useState,  useEffect } from "react";
 
 import List from "./List/List";
 import getData from "./service/tableProjectsService";
-import Constants from "./constants/constants";
+import {headers} from "./constants/constants";
 
 const TableProjects = (props : any) =>  {
 
@@ -19,7 +19,7 @@ const TableProjects = (props : any) =>  {
                 data={data}
                 page={0}
                 totalpage={0}
-                headers={Constants}
+                headers={headers()}
             ></List>
         </div>
     )

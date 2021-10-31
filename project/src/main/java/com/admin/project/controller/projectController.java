@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/project")
-@CrossOrigin
 public class projectController {
 
     final ProjectService service;

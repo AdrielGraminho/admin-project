@@ -1,46 +1,65 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {useHistory} from "react-router-dom";
 
 const ListHours = (props) =>  {
 
+    const [data, setData] = useState()
     const history = useHistory();
 
+    useEffect(() => {
+        setData(props?.data)
+        }, [props.data]);
+
+
     const renderRow = () => {
-        if(!!props.data)
+        if(!!data)
             return(
-                props?.data.map(data =>
-                    <tr scope="row" key={data?.idWorked}>
-                        <td>
-                            {data?.user.name}
-                        </td>
-                        <td>
-                            {data?.project.name}
-                        </td>
-                        <td>
-                            {data?.date}
-                        </td>
-                        <td>
-                            {data.user.name}
-                        </td>
-                    </tr>
+                data.map(worked =>
+                            <tr scope="row" key={data?.idWorked}>
+                                <td>
+                                    {worked?.user.name}
+                                </td>
+                                <td>
+                                    {worked?.project.name}
+                                </td>
+                                <td>
+                                    {worked?.date}
+                                </td>
+                                <td>
+                                    {worked.hours}
+                                </td>
+                                <td >
+                                    <button  onClick={() => handleEdit(worked)} >Editar</button>
+                                </td>
+                            </tr>
                 )
             )
     }
 
+    const handleEdit = (worked) => {
+        history.push
+        ({
+            pathname: `/editHours`,
+            state: { worked: worked }
+        })
+    }
 
     return(
-        <table class="table">
-            <thead>
-            <tr scope="row">
-                {props.headers.map(key => <td> {key.label} </td>)}
-            </tr>
-            </thead>
-            <tbody>
-            {
-                renderRow()
-            }
-            </tbody>
-        </table>
+        <div>
+            <table className="table">
+                <thead>
+                <tr scope="row">
+                    {props.headers.map(key => <td> {key.label} </td>)}
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    renderRow()
+                }
+                </tbody>
+            </table>
+
+        </div>
     )
 }
 

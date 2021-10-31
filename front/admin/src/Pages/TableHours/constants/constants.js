@@ -19,6 +19,10 @@ export const headers = () => {
                 name: "hours",
                 label: "Horas trabalhadas"
             },
+            {
+                name: "actions",
+                label: "Ações"
+            },
         ]
     )
 }

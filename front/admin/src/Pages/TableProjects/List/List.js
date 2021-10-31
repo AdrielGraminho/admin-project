@@ -13,7 +13,7 @@ import { useHistory } from "react-router-dom";
                              {data.name}
                          </td>
                          <td >
-                             <button  className="btn btn-outline-primary" onClick={() => handleClick(data?.idProject) }
+                             <button  onClick={() => handleClick(data?.idProject) }
                              >Detalhes</button>
                          </td>
                      </tr>

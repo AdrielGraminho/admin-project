@@ -1,18 +1,8 @@
 import React from "react";
+import axios from "axios";
 
-const getData = () =>  {
-    return(
-        [
-            {
-                id: 1,
-                name: "Projeto Cliente A"
-            },
-            {
-                id: 2,
-                name: "Projeto Cliente B"
-            }
-        ]
-    )
+const getData = async (idUser: number) => {
+    return await axios.get(`http://localhost:8080/project/${idUser}`)
 }
 
 export default getData;

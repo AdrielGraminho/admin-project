@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
 
-const editData = async (workedId: number, userId: number, projectId: number, date: string, hours: number) => {
+export const editData = async (workedId: number, userId: number, projectId: number, date: string, hours: number) => {
     const idUser = 3 //todo após autenticar mudar esse valor para o usuário logado
-    return await axios({
+    return axios({
         method: 'put',
         url: `http://localhost:8080/worked`,
         data: {
@@ -15,5 +15,3 @@ const editData = async (workedId: number, userId: number, projectId: number, dat
         }
     });
 }
-
-export default editData;

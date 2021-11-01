@@ -5,17 +5,18 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 import {TableHours} from "./Pages/TableHours";
-import ListHours from "./Pages/TableHours/List/ListHours";
 import {HoursEdit} from "./Pages/HoursEdit";
+import {SaveHour} from "./Pages/SaveHour";
 
 function App() {
   return (
       <div className={"App"}>
           <Router>
               <Switch>
+                  <Route path="/saveHour/"  render={props => <SaveHour {...props}></SaveHour>} >
+                  </Route>
                   <Route path="/hours/"  render={props => <TableHours {...props}></TableHours>} >
                   </Route>
                   <Route path="/editHours/"  render={props => <HoursEdit {...props}></HoursEdit>}>

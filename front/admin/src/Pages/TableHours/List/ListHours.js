@@ -44,6 +44,14 @@ const ListHours = (props) =>  {
         })
     }
 
+    const handleSave = () => {
+        history.push
+        ({
+            pathname: `/saveHour`,
+            state: { idUser: 3 } //todo trocar por id do usuário quando estiver autenticado
+        })
+    }
+
     return(
         <div>
             <table className="table">
@@ -58,7 +66,7 @@ const ListHours = (props) =>  {
                 }
                 </tbody>
             </table>
-
+            <button  onClick={() => handleSave()} >Salvar Novo</button>
         </div>
     )
 }

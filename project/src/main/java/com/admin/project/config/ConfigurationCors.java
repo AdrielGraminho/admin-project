@@ -1,4 +1,4 @@
-package com.admin.project;
+package com.admin.project.config;
 
 
 import org.springframework.context.annotation.Configuration;

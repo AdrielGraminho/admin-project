@@ -30,8 +30,13 @@ public class WorkedServiceImpl implements WorkedService {
     }
 
     @Override
-    public Page<Worked> findWorkedByUserAndProject(Long idUser, Long idProject, Pageable pageable) {
-        return repository.findWorkedByUserAndProject(idUser, idProject, pageable);
+    public Page<Worked> findWorkedByUserAndProject(Long idUser, Long idProject, Pageable pageable) throws CustomHandlerException {
+        Optional<User> user = userService.findById(idUser);
+
+        if (user.get().getRole().getName().equals("ADMIN"))
+            return repository.findAllPagede(idProject, pageable);
+        else
+            return repository.findWorkedByUserAndProject(idUser, idProject, pageable);
     }
 
     @Override

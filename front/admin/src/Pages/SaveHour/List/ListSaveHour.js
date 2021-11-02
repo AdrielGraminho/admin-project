@@ -2,9 +2,10 @@ import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import { saveData} from "../Service/hoursSaveService";
 import getData from "../../TableProjects/service/tableProjectsService";
+import Cookies from 'universal-cookie';
 
 const ListSaveHour = (props) =>  {
-
+    const cookies = new Cookies();
     const [data, setData] = useState()
     const [date, setDate] = useState("")
     const [hours, setHours] = useState(0)
@@ -16,16 +17,18 @@ const ListSaveHour = (props) =>  {
     const history = useHistory();
 
     const handleSave = () => {
-        saveData(props.children[1], idProject, date, hours) //todo usar id do usuário logado
+        saveData(idProject, date, hours)
     }
 
     const getProject = () => {
 
-        if(!!selectOptions)
+        if(!!selectOptions){
             return (
                 <select className={"form-select"} style={{marginTop: "12px"}}
-                        onChange={(item) => setIdProject(item.target.value)}
-                        value={idProject || null}>
+                        onChange={(item) => {
+                            setIdProject(item.target.value)
+                        }}
+                        value={idProject}>
                     {
                         selectOptions.map(option => {
                             return <option value={option?.idProject}>{option?.name}</option>
@@ -33,11 +36,14 @@ const ListSaveHour = (props) =>  {
                     }
                 </select>
             )
+        }
+
     }
 
     useEffect(() => {
-        getData(props.children[1]).then((response) => { //todo usar id do usuário logado
+        getData().then((response) => { //todo usar id do usuário logado
             setSelectOptions(response.data.content)
+            setIdProject(response.data.content[0]?.idProject)
         })
     }, []);
 
@@ -45,8 +51,7 @@ const ListSaveHour = (props) =>  {
             return(
                 <tr scope="row" key={data?.idWorked}>
                     <td>
-                        {/*todo usar nome do usuário logado*/}
-                        teste
+                        {cookies.get('userName')}
                     </td>
                     {
                         getProject()
@@ -58,7 +63,7 @@ const ListSaveHour = (props) =>  {
                         <input type="number" value={hours} onChange={(item => setHours(item.target.value))}/>
                     </td>
                     <td >
-                        <button  onClick={() => handleSave()} >Salvar</button>
+                        <button className="btn btn-primary" onClick={() => handleSave()} >Salvar</button>
                     </td>
                 </tr>
             )

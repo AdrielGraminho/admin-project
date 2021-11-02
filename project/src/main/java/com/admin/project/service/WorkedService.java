@@ -7,7 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 public interface WorkedService {
-    Page<Worked> findWorkedByUserAndProject(Long idUser, Long idProject, Pageable pageable);
+    Page<Worked> findWorkedByUserAndProject(Long idUser, Long idProject, Pageable pageable) throws CustomHandlerException;
 
     Worked save(WorkedDTO workedDTO) throws CustomHandlerException;
 

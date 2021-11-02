@@ -6,20 +6,20 @@ public class JwtResponse {
 	private Long id;
 	private String username;
 	private String email;
-	private Long IdRole;
+	private String nameRole;
 
 
-	public JwtResponse(String accessToken, Long id, String username, String email, Long role) {
+	public JwtResponse(String accessToken, Long id, String username, String email, String nameRole) {
 		this.token = accessToken;
 		this.id = id;
 		this.username = username;
 		this.email = email;
-		this.IdRole = role;
+		this.nameRole = nameRole;
 	}
 
 
-	public Long getIdRole() {
-		return IdRole;
+	public String getNameRole() {
+		return nameRole;
 	}
 
 	public String getAccessToken() {

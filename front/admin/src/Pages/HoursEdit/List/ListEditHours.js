@@ -9,8 +9,6 @@ const ListEditHours = (props) =>  {
     const [date, setDate] = useState(props.children[1].location.state.worked.date)
     const [hours, setHours] = useState(props.children[1].location.state.worked.hours)
     const [editable, setEditable] = useState(!props.children[1].location.state.worked.idWorked)
-    const [options, setOptions] = useState()
-    const [select, setSelect] = useState()
     const [selectOptions, setSelectOptions] = useState()
     const [idProject, setIdProject] = useState(props.children[1].location.state.worked.project.idProject)
 
@@ -39,7 +37,7 @@ const ListEditHours = (props) =>  {
     }
 
     useEffect(() => {
-        getData(data.user.idUser).then((response) => {
+        getData().then((response) => {
             setSelectOptions(response.data.content)
         })
     }, []);
@@ -61,6 +59,9 @@ const ListEditHours = (props) =>  {
                         <input type="number"  value={hours} onChange={(item => setHours(item.target.value))}/>
                     </td>
                     <td >
+                        {
+
+                        }
                         <button className="btn btn-primary"  onClick={() => handleSave()} >Salvar</button>
                     </td>
                 </tr>

@@ -15,7 +15,7 @@ export const login = async (username : string, userPassword : string) => {
         cookies.set('token', login.data.accessToken);
         cookies.set('userName', login.data.username);
         cookies.set('idUser', login.data.id);
-        cookies.set('idRole', login.data.idRole);
+        cookies.set('nameRole', login.data.nameRole);
 
           //console.log(cookies.get('token'));
     })

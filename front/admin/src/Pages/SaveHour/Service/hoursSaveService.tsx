@@ -1,14 +1,17 @@
 import React from "react";
 import axios from "axios";
+import Cookies from "universal-cookie";
 
-export const saveData = async (userId: number, projectId :number, date: string, hours: number) => {
-    const idUser = 3 //todo após autenticar mudar esse valor para o usuário logado
+export const saveData = async ( idProject :number, date: string, hours: number) => {
+    const cookies = new Cookies();
+
+    const idUser = cookies.get('idUser')
     return axios({
         method: 'post',
         url: `http://localhost:8080/worked`,
         data: {
-            userId: userId,
-            projectId: projectId,
+            userId: idUser,
+            projectId: idProject,
             date: date,
             hours: hours
         }

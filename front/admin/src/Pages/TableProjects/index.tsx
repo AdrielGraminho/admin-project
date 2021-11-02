@@ -13,7 +13,7 @@ const TableProjects = (props : any) =>  {
     const [totalPage, setTotalPage] = useState(1)
 
     useEffect(() => {
-        getData(cookies.get('idUser'), page).then((response : any ) => {
+        getData(page).then((response : any ) => {
             setData(response.data?.content)
             setPage(response.data?.number)
         })}, [page]);

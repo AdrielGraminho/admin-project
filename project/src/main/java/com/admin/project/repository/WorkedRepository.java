@@ -16,4 +16,8 @@ public interface WorkedRepository extends JpaRepository<Worked, Long> {
             " where u.idUser = :idUser " +
             " and p.idProject = :idProject")
     Page<Worked> findWorkedByUserAndProject(Long idUser, Long idProject, Pageable pageable);
+
+    @Query(value = "select w from Worked w " +
+            " where w.project.idProject = :idProject")
+    Page<Worked> findAllPagede(Long idProject, Pageable pageable);
 }

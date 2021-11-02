@@ -1,8 +1,5 @@
 package com.auth.springjwt.controllers;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import javax.validation.Valid;
 
 import com.auth.springjwt.repository.UserRepository;
@@ -54,6 +51,7 @@ public class AuthController {
 		return ResponseEntity.ok(new JwtResponse(jwt,
 												 userDetails.getId(),
 												 userDetails.getUsername(),
-												 userDetails.getEmail()));
+												 userDetails.getEmail(),
+												 userDetails.getIdRole()));
 	}
 }

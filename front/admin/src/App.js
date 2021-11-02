@@ -9,6 +9,7 @@ import {
 import {TableHours} from "./Pages/TableHours";
 import {HoursEdit} from "./Pages/HoursEdit";
 import {SaveHour} from "./Pages/SaveHour";
+import {Login} from "./Pages/Login";
 
 function App() {
   return (
@@ -21,9 +22,8 @@ function App() {
                   </Route>
                   <Route path="/editHours/"  render={props => <HoursEdit {...props}></HoursEdit>}>
                   </Route>
-                  <Route path="/tableProjects">
-                      <TableProjects></TableProjects>
-                  </Route>
+                  <Route path="/projects"><TableProjects></TableProjects></Route>
+                  <Route path="/"><Login></Login></Route>
               </Switch>
           </Router>
       </div>

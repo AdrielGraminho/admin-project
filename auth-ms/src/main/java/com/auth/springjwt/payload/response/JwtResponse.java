@@ -1,24 +1,28 @@
 package com.auth.springjwt.payload.response;
 
-import java.util.List;
-
 public class JwtResponse {
 	private String token;
 	private String type = "Bearer";
 	private Long id;
 	private String username;
 	private String email;
+	private Long IdRole;
 
-	public JwtResponse(String accessToken, Long id, String username, String email) {
+
+	public JwtResponse(String accessToken, Long id, String username, String email, Long role) {
 		this.token = accessToken;
 		this.id = id;
 		this.username = username;
 		this.email = email;
+		this.IdRole = role;
 	}
 
 
+	public Long getIdRole() {
+		return IdRole;
+	}
 
-    public String getAccessToken() {
+	public String getAccessToken() {
 		return token;
 	}
 

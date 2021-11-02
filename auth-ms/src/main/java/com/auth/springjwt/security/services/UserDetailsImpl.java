@@ -1,14 +1,10 @@
 package com.auth.springjwt.security.services;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
-import com.auth.springjwt.models.Role;
 import com.auth.springjwt.models.User;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,16 +18,19 @@ public class UserDetailsImpl implements UserDetails {
 
 	private String email;
 
+	private Long idRole;
+
 	@JsonIgnore
 	private String password;
 
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public UserDetailsImpl(Long id, String username, String email, String password) {
+	public UserDetailsImpl(Long id, String username, String email, String password, Long role) {
 		this.id = id;
 		this.username = username;
 		this.email = email;
 		this.password = password;
+		this.idRole = role;
 	}
 
 	public static UserDetailsImpl build(User user) {
@@ -41,7 +40,8 @@ public class UserDetailsImpl implements UserDetails {
 				user.getIdUser(),
 				user.getName(),
 				user.getEmailAddress(),
-				user.getPassword());
+				user.getPassword(),
+				user.getRole().getIdRole());
 	}
 
 	@Override
@@ -55,6 +55,10 @@ public class UserDetailsImpl implements UserDetails {
 
 	public String getEmail() {
 		return email;
+	}
+
+	public Long getIdRole() {
+		return idRole;
 	}
 
 	@Override

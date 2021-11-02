@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
+import Cookies from 'universal-cookie';
 
 const ListHours = (props) =>  {
-
+    const cookies = new Cookies();
     const [data, setData] = useState()
     const history = useHistory();
 
@@ -29,7 +30,11 @@ const ListHours = (props) =>  {
                                     {worked.hours}
                                 </td>
                                 <td >
-                                    <button className="btn btn-primary"  onClick={() => handleEdit(worked)} >Editar</button>
+                                    {
+                                        cookies.get('nameRole') != "ADMIN" ?
+                                            <button className="btn btn-primary"  onClick={() => handleEdit(worked)} >Editar</button>
+                                        :null
+                                    }
                                 </td>
                             </tr>
                 )
@@ -48,7 +53,7 @@ const ListHours = (props) =>  {
         history.push
         ({
             pathname: `/saveHour`,
-            state: { idUser: 3 } //todo trocar por id do usuário quando estiver autenticado
+            state: { idUser: cookies.get('idUser') }
         })
     }
 
@@ -66,7 +71,12 @@ const ListHours = (props) =>  {
                 }
                 </tbody>
             </table>
-            <button  className="btn btn-primary" onClick={() => handleSave()} >Salvar Novo</button>
+            <button className="btn btn-primary"  style={{"margin": "10px"}}  onClick={() => history.goBack()}>Voltar</button>
+            {
+                cookies.get('nameRole') != "ADMIN" ?
+                <button  className="btn btn-primary" style={{"margin": "10px"}}  onClick={() => handleSave()} >Salvar Novo</button>
+                    :null
+            }
         </div>
     )
 }

@@ -6,6 +6,7 @@ import {headers} from "./constants/constants";
 import Cookies from 'universal-cookie';
 
 const TableProjects = (props : any) =>  {
+
     const cookies = new Cookies();
 
     const [data, setData] = useState()
@@ -17,7 +18,6 @@ const TableProjects = (props : any) =>  {
             setData(response.data?.content)
             setPage(response.data?.number)
         })}, [page]);
-   // setPage(response.data?.content?.number)
 
     return(
         <div>

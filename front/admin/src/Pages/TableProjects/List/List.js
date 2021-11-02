@@ -30,18 +30,21 @@ import { useHistory } from "react-router-dom";
      }
 
      return(
-      <table class="table">
-          <thead>
-          <tr scope="row">
-              {props.headers.map(key => <td> {key.label} </td>)}
-          </tr>
-          </thead>
-          <tbody>
-          {
-            renderRow()
-          }
-          </tbody>
-      </table>
+         <div>
+              <table class="table">
+                  <thead>
+                  <tr scope="row">
+                      {props.headers.map(key => <td> {key.label} </td>)}
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {
+                    renderRow()
+                  }
+                  </tbody>
+              </table>
+             <button className="btn btn-primary"  style={{"margin": "10px"}}  onClick={() => history.goBack()}>Voltar</button>
+         </div>
     )
 }
 

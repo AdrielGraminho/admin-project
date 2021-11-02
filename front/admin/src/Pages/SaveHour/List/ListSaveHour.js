@@ -70,6 +70,7 @@ const ListSaveHour = (props) =>  {
     }
 
     return(
+        <div>
                 <table className="table">
                     <thead>
                         <tr>
@@ -82,7 +83,9 @@ const ListSaveHour = (props) =>  {
                     }
                     </tbody>
                 </table>
-    )
+                <button className="btn btn-primary"  style={{"margin": "10px"}}  onClick={() => history.goBack()}>Voltar</button>
+        </div>
+)
 }
 
 export default ListSaveHour;

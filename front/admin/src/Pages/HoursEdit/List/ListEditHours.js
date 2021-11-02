@@ -4,7 +4,6 @@ import {editData} from "../Service/hoursEditService";
 import getData from "../../TableProjects/service/tableProjectsService";
 
 const ListEditHours = (props) =>  {
-
     const [data, setData] = useState(props.children[1].location.state.worked)
     const [date, setDate] = useState(props.children[1].location.state.worked.date)
     const [hours, setHours] = useState(props.children[1].location.state.worked.hours)
@@ -41,7 +40,6 @@ const ListEditHours = (props) =>  {
             setSelectOptions(response.data.content)
         })
     }, []);
-
     const renderRow = () => {
         if (!!data)
             return(
@@ -59,9 +57,6 @@ const ListEditHours = (props) =>  {
                         <input type="number"  value={hours} onChange={(item => setHours(item.target.value))}/>
                     </td>
                     <td >
-                        {
-
-                        }
                         <button className="btn btn-primary"  onClick={() => handleSave()} >Salvar</button>
                     </td>
                 </tr>
@@ -69,6 +64,7 @@ const ListEditHours = (props) =>  {
     }
 
     return(
+        <div>
                 <table className="table">
                     <thead>
                     <tr scope="row">
@@ -81,7 +77,9 @@ const ListEditHours = (props) =>  {
                     }
                     </tbody>
                 </table>
-    )
+            <button className="btn btn-primary"  style={{"margin": "10px"}}  onClick={() => history.goBack()}>Voltar</button>
+        </div>
+            )
 }
 
 export default ListEditHours;

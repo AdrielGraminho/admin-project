@@ -23,11 +23,11 @@ export const FormLogin = () => {
     return(
         <form>
             <div className="form-group">
-                <label htmlFor="formGroupExampleInput">Example label</label>
+                <label htmlFor="formGroupExampleInput">Nome</label>
                 <input onChange={(item => setUsername(item.target.value))} type="text" className="form-control text-center" id="formGroupExampleInput" placeholder="Nome do Usuário"/>
             </div>
             <div className="form-group">
-                <label htmlFor="formGroupExampleInput2">Another label</label>
+                <label htmlFor="formGroupExampleInput2">Senha</label>
                 <input onChange={(item => setUserPassword(item.target.value))} type="password" className="form-control text-center" id="formGroupExampleInput2" placeholder="Password"/>
             </div>
             <button type="button" className="btn btn-primary" onClick={() => handleSubmit()}>Login</button>

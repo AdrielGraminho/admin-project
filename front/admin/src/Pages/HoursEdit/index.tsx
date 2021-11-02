@@ -4,11 +4,6 @@ import {headers} from "../TableHours/constants/constants";
 
 export function HoursEdit (props : any) {
 
-    const [data, setData] = useState()
-    useEffect(() => {
-
-    }, []);
-
     return(
     <ListEditHours>
         data={props}

@@ -17,31 +17,31 @@ const TableProjects = (props : any) =>  {
         getData(page).then((response : any ) => {
             setData(response.data?.content)
             setPage(response.data?.number)
+            setTotalPage(response.data.totalPages)
         })}, [page]);
 
     return(
         <div>
+            <div>
+                {
+                    totalPage > 1 ?
+                        <div>
+                            <button style={{"margin": "10px"}}  type="button" className="btn btn-primary "
+                                    onClick={() => {
+                                        if(page > 0)
+                                            setPage(page - 1)
+                                    }}>Anterior
+                            </button>
+                            <button type="button" className="btn btn-primary"
+                                    onClick={() => setPage(page + 1 )}>Próxima
+                            </button>
+                        </div> : null
+                }
+            </div>
             <List
                 data={data}
                 headers={headers()}
             ></List>
-            <div>
-                {
-                    totalPage ==0 ?
-                    <div>
-                        <button style={{"margin": "10px"}}  type="button" className="btn btn-primary "
-                                onClick={() => {
-                                    if(page > 0)
-                                        setPage(page - 1)
-                                }}>Anterior
-                        </button>
-                        <button type="button" className="btn btn-primary"
-                                onClick={() => setPage(page + 1 )}>Próxima
-                        </button>
-                    </div> : null
-                }
-            </div>
-
         </div>
     )
 }

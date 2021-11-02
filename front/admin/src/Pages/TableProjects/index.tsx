@@ -8,13 +8,13 @@ import Cookies from 'universal-cookie';
 const TableProjects = (props : any) =>  {
     const cookies = new Cookies();
 
-    const [data, setdata] = useState()
+    const [data, setData] = useState()
     const [page, setPage] = useState(0)
     const [totalPage, setTotalPage] = useState(1)
 
     useEffect(() => {
         getData(cookies.get('idUser'), page).then((response : any ) => {
-            setdata(response.data?.content)
+            setData(response.data?.content)
             setPage(response.data?.number)
         })}, [page]);
    // setPage(response.data?.content?.number)
@@ -27,9 +27,9 @@ const TableProjects = (props : any) =>  {
             ></List>
             <div>
                 {
-                    totalPage !=0 ?
+                    totalPage ==0 ?
                     <div>
-                        <button type="button" className="btn btn-primary "
+                        <button style={{"margin": "10px"}}  type="button" className="btn btn-primary "
                                 onClick={() => {
                                     if(page > 0)
                                         setPage(page - 1)

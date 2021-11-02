@@ -13,7 +13,7 @@ import { useHistory } from "react-router-dom";
                              {data.name}
                          </td>
                          <td >
-                             <button type="button" className="btn btn-primary"  onClick={() => handleClick(data?.idProject) }
+                             <button type="button" className="btn btn-primary"  onClick={() => handleEdit(data?.idProject) }
                              >Detalhes</button>
                          </td>
                      </tr>
@@ -21,7 +21,7 @@ import { useHistory } from "react-router-dom";
              )
      }
 
-     const handleClick = (idProject) => {
+     const handleEdit = (idProject) => {
          history.push
          ({
              pathname: `/hours`,

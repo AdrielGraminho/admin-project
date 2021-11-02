@@ -61,7 +61,7 @@ const ListEditHours = (props) =>  {
                         <input type="number"  value={hours} onChange={(item => setHours(item.target.value))}/>
                     </td>
                     <td >
-                        <button  onClick={() => handleSave()} >Salvar</button>
+                        <button className="btn btn-primary"  onClick={() => handleSave()} >Salvar</button>
                     </td>
                 </tr>
                 )

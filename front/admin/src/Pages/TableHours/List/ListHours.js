@@ -29,7 +29,7 @@ const ListHours = (props) =>  {
                                     {worked.hours}
                                 </td>
                                 <td >
-                                    <button  onClick={() => handleEdit(worked)} >Editar</button>
+                                    <button className="btn btn-primary"  onClick={() => handleEdit(worked)} >Editar</button>
                                 </td>
                             </tr>
                 )
@@ -66,7 +66,7 @@ const ListHours = (props) =>  {
                 }
                 </tbody>
             </table>
-            <button  onClick={() => handleSave()} >Salvar Novo</button>
+            <button  className="btn btn-primary" onClick={() => handleSave()} >Salvar Novo</button>
         </div>
     )
 }

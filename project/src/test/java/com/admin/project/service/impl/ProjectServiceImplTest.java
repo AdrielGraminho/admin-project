@@ -38,7 +38,7 @@ public class ProjectServiceImplTest {
     public void MustBeReturnEmptyForDevProjects() throws CustomHandlerException {
         Pageable pageable = PageRequest.of(0, 10);
         Role role = new Role(1L, "Desenvolvedor", "DEV");
-        User dev = new User(1L, "Adriel", role, "123" );
+        User dev = new User(1L, "adrielgraminho@gmail.com", "Adriel", role, "123" );
         Page<Project> project = Page.empty();
 
         when(userService.findById(1L)).thenReturn(java.util.Optional.of(dev));
@@ -55,7 +55,7 @@ public class ProjectServiceImplTest {
     public void MustBeReturnEmptyForAdminProjects() throws CustomHandlerException {
         Pageable pageable = PageRequest.of(0, 10);
         Role role = new Role(1L, "Desenvolvedor", "ADMIN");
-        User dev = new User(1L, "Adriel", role, "123" );
+        User dev = new User(1L, "adrielgraminho@gmail.com", "Adriel", role, "123" );
         Page<Project> project = Page.empty();
 
         when(userService.findById(1L)).thenReturn(java.util.Optional.of(dev));

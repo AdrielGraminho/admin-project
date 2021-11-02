@@ -21,6 +21,8 @@ public class User {
     @Column(name = "id_user")
     private Long idUser;
 
+    private String emailAddress;
+
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -21,7 +21,7 @@ function App() {
                   </Route>
                   <Route path="/editHours/"  render={props => <HoursEdit {...props}></HoursEdit>}>
                   </Route>
-                  <Route path="/">
+                  <Route path="/tableProjects">
                       <TableProjects></TableProjects>
                   </Route>
               </Switch>

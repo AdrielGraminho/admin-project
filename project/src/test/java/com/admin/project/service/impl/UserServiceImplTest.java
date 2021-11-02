@@ -28,7 +28,7 @@ public class UserServiceImplTest  {
     @Test
     public void mustBeReturnUserById() throws CustomHandlerException {
         Role role = new Role(1L, "Administrador", "ADMIN");
-        User user = new User(1L, "Adriel", role, "123" );
+        User user = new User(1L, "adrielgraminho@gmail.com", "Adriel", role, "123" );
 
         when(repository.findById(1L)).thenReturn(Optional.of(user));
 

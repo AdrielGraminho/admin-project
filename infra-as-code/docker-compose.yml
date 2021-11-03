@@ -1,6 +1,29 @@
 version: '3.5'
 
 services: 
+
+    backend:
+        build: ../project/.
+        ports: 
+            - "8080:8080"
+        networks:
+            - employee-db
+        depends_on: 
+            - db
+        links: 
+            - db
+
+    auth:
+        build: ../auth-ms/.
+        ports: 
+            - "7050:7050"
+        networks:
+            - employee-db
+        depends_on: 
+            - db
+        links: 
+            - db
+
     db:
         image: postgres:9.4        
         ports:

@@ -5,7 +5,6 @@
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/entity/Project.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/exceptions/CustomHandlerException.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/entity/Role.java
-/home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/ConfigurationCors.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/service/UserService.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/repository/ProjectRepository.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/entity/User.java
@@ -13,8 +12,10 @@
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/controller/workedController.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/service/WorkedService.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/controller/userController.java
+/home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/config/ConfigurationCors.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/entity/RlUserProject.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/controller/projectController.java
+/home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/config/SwaggerConfig.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/service/ProjectService.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/service/impl/ProjectServiceImpl.java
 /home/adrieldev/Documentos/admin-project/project/src/main/java/com/admin/project/ProjectApplication.java

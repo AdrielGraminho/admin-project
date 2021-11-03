@@ -3,7 +3,10 @@ import {useHistory} from "react-router-dom";
 import { saveData} from "../Service/hoursSaveService";
 import getData from "../../TableProjects/service/tableProjectsService";
 import Cookies from 'universal-cookie';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
+toast.configure()
 const ListSaveHour = (props) =>  {
     const cookies = new Cookies();
     const [data, setData] = useState()
@@ -16,8 +19,15 @@ const ListSaveHour = (props) =>  {
     const [idProject, setIdProject] = useState()
     const history = useHistory();
 
+
     const handleSave = () => {
-        saveData(idProject, date, hours)
+        saveData(idProject, date, hours).then(response => {
+            if(response.status == 200){
+            toast.success("Salvo com sucesso")
+            }else {
+                toast.error("Algo deu errado")
+            }
+        })
     }
 
     const getProject = () => {

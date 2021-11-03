@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import {editData} from "../Service/hoursEditService";
 import getData from "../../TableProjects/service/tableProjectsService";
+import {toast} from "react-toastify";
 
 const ListEditHours = (props) =>  {
     const [data, setData] = useState(props.children[1].location.state.worked)
@@ -14,7 +15,13 @@ const ListEditHours = (props) =>  {
     const history = useHistory();
 
     const handleSave = () => {
-        editData(data?.idWorked, data.user.idUser, idProject, date, hours )
+        editData(data?.idWorked, data.user.idUser, idProject, date, hours).then(response => {
+            if(response.status == 200){
+                toast.success("Salvo com sucesso")
+            }else {
+                toast.error("Algo deu errado")
+            }
+        })
     }
 
     const getProject = () => {

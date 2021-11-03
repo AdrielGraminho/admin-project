@@ -6,7 +6,6 @@ export function SaveHour (props : any) {
 
     return(
     <ListSaveHour>
-
         data={props.location.state.idUser}
         headers={headers()}
     </ListSaveHour>

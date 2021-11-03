@@ -14,7 +14,6 @@ import {Login} from "./Pages/Login";
 function App() {
   return (
       <div className={"App"}>
-          <nav></nav>
           <Router>
               <Switch>
                   <Route path="/saveHour/"  render={props => <SaveHour {...props}></SaveHour>} >

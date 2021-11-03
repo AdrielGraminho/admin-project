@@ -48,6 +48,7 @@
     "emotion": "^11.0.0",
     "pages": "^0.0.16",
     "react-base-table": "^1.13.0",
-    "react-router-dom": "^5.3.0"
+    "react-router-dom": "^5.3.0",
+    "react-toastify": "^8.1.0"
   }
 }

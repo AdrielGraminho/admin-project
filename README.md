@@ -3,7 +3,7 @@
 Este projeto tem como objetivo servir como anotação das horas trabalhadas por desenvolvedores em seus respectivos projetos.
 Para executá-lo é necessário o maven instalado, docker e docker-compose.
 
-# Passos para executálo: 
+# Passos para execução: 
 -No diretório project execute: "mvn clean package install"
 -No diretório auth execute: "mvn clean package install"
 -Verifique se os arquivos .jar foram gerados en seus respectivos projetos, caso tenham sido, poderá prosseguir.
@@ -11,9 +11,9 @@ Para executá-lo é necessário o maven instalado, docker e docker-compose.
 -Acesse "http://localhost:3000/"
 
 # Para utilizar a interface estarão disponíveis 3 usuários para logar: 
--ADMIN
--Programador 1
--Programador 2
+ADMIN
+Programador 1
+Programador 2
 
 A senha para qualquer deles é 1234
 

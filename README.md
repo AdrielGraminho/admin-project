@@ -8,6 +8,8 @@ Para executá-lo é necessário o maven instalado, docker e docker-compose.
 
 -No diretório "/auth" execute: "mvn clean package install"
 
+-Descompacte o arquivo "data"
+
 -Verifique se os arquivos .jar foram gerados en seus respectivos projetos, caso tenham sido, poderá prosseguir.
 
 -No diretório "infra-as-code", execute "docker-compose up -d"

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/worked")
+@CrossOrigin
 public class workedController {
 
     private final WorkedService service;
@@ -25,7 +26,7 @@ public class workedController {
     public Page<Worked> findProjectsByUserId(@PathVariable("idUser") Long idUser,
                                              @PathVariable("idProject") Long idProject,
                                              @RequestParam(value = "page", required = false, defaultValue = "0") Integer page,
-                                             @RequestParam(value = "size", required = false, defaultValue = "10") Integer size
+                                             @RequestParam(value = "size", required = false, defaultValue = "5") Integer size
     ) throws CustomHandlerException {
         Pageable pageable = PageRequest.of(page, size);
         return service.findWorkedByUserAndProject(idUser, idProject, pageable);

@@ -25,7 +25,7 @@ public class projectController {
     @ApiOperation("Find projects by Id user")
     public Page<Project> findProjectsByUserId(@PathVariable("idUser") Long idUser,
                                               @RequestParam(value = "page", required = false, defaultValue = "0") Integer page,
-                                              @RequestParam(value = "size", required = false, defaultValue = "10") Integer size
+                                              @RequestParam(value = "size", required = false, defaultValue = "5") Integer size
     ) throws CustomHandlerException {
         Pageable pageable = PageRequest.of(page, size);
         return service.findProjectsByUserId(idUser, pageable);

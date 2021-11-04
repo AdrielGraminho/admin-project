@@ -24,6 +24,15 @@ services:
         links: 
             - db
 
+    node:
+        image: node:12
+        ports:
+            - '3000:3000'
+        volumes:
+            - ../front/admin:/srv/react-docker
+        working_dir: /srv/react-docker
+        command: 'yarn start'
+
     db:
         image: postgres:9.4        
         ports:
